@@ -9,6 +9,7 @@ interface ParkingData {
   isOccupied: boolean;
   occupantName: string;
   vehicleType: VehicleType;
+  parkedAt?: string;
 }
 
 interface ParkingSpotProps {
@@ -67,6 +68,8 @@ const ParkingSpot: React.FC<ParkingSpotProps> = ({
           <div className="bg-white rounded-lg p-3">
             <p className="text-sm text-gray-600">Parked by:</p>
             <p className="font-medium text-gray-800">{spot.occupantName}</p>
+            <p className="text-sm text-gray-600">Parked since:</p>
+            <p className="font-medium text-gray-800">{spot.parkedAt}</p>
           </div>
           <button
             onClick={() => onUnpark(spot.id)}
